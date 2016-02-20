@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row grid">
+  {% for story in stories %}
+  <div class="col-sm-6 col-md-3 grid-item">
+    <div class="thumbnail">
+      <a href="{{servlet-context}}/story/{{story.id}}">
+        <img src="/img/{{story.preview_photo}}" class="img-responsive" alt="...">
+      </a>
+      <div class="caption">
+        <h3>{{story.name}}</h3>
+        <p>{{story.description}}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
